@@ -1,0 +1,27 @@
+/* AfterLoop brand tokens — copia da afterloop-brand-kit/tokens/tokens.css
+   (rimossa la riga @import dei Google Fonts: i font sono serviti da next/font). */
+:root{--al-ink:#05080F;--al-deep:#0A1530;--al-cobalt:#2B59FF;--al-ember:#FF6B2C;--al-flare:#E0457B;--al-mist:#E8EDF7;--al-glow:#FFB27A;--al-sky:#7C9BFF;--al-ok:#3DDC97;
+--al-bg:#05080F;--al-text:#E8EDF7;--al-text-muted:rgba(232,237,247,.68);--al-border:rgba(255,255,255,.12);--al-surface:rgba(255,255,255,.04);--al-glass:rgba(5,8,15,.62);--al-accent:#FFB27A;
+--al-gradient-afterglow:radial-gradient(110% 70% at 25% 115%,#FF6B2C 0%,#E0457B 30%,rgba(224,69,123,0) 62%),radial-gradient(90% 80% at 90% 105%,#2B59FF 0%,rgba(43,89,255,0) 65%),linear-gradient(180deg,#05080F 0%,#0A1530 55%,#05080F 100%);
+--al-flutes:repeating-linear-gradient(90deg,rgba(5,8,15,.5) 0 3px,rgba(5,8,15,0) 3px 12px);
+--al-font-sans:'Geist',system-ui,sans-serif;--al-font-serif:'Instrument Serif',Georgia,serif;--al-font-mono:'Geist Mono',ui-monospace,monospace;
+--al-radius-control:12px;--al-radius-card:20px;--al-radius-panel:28px;--al-radius-pill:999px;
+--al-s1:4px;--al-s2:8px;--al-s3:12px;--al-s4:16px;--al-s5:24px;--al-s6:32px;--al-s7:48px;--al-s8:72px;--al-s9:96px;
+--al-ease:cubic-bezier(.2,.7,.2,1);--al-dur:180ms}
+[data-theme=light]{--al-bg:#E8EDF7;--al-text:#05080F;--al-text-muted:rgba(5,8,15,.68);--al-border:rgba(5,8,15,.12);--al-surface:#fff;--al-accent:#2B59FF}
+.al-title{font-weight:500;letter-spacing:-.04em;line-height:1}
+.al-accent{font-family:var(--al-font-serif);font-style:italic;font-weight:400;font-size:1.1em;color:var(--al-accent)}
+.al-eyebrow{font:500 12px var(--al-font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--al-text-muted)}
+.al-glass{background:var(--al-glass);backdrop-filter:blur(14px);border:1px solid var(--al-border);border-radius:var(--al-radius-panel)}
+.al-card{background:var(--al-surface);border:1px solid var(--al-border);border-radius:var(--al-radius-card)}
+/* Afterglow: solo hero/poster. I figli del contenitore devono avere position:relative;z-index:1 */
+.al-afterglow{position:relative;overflow:hidden;background:var(--al-gradient-afterglow)}
+.al-afterglow::after{content:"";position:absolute;inset:0;background:var(--al-flutes);-webkit-mask-image:linear-gradient(180deg,transparent 25%,#000);mask-image:linear-gradient(180deg,transparent 25%,#000);pointer-events:none}
+.al-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 22px;border:0;border-radius:var(--al-radius-pill);font:500 15px var(--al-font-sans);cursor:pointer;transition:transform var(--al-dur) var(--al-ease),background var(--al-dur) var(--al-ease)}
+.al-btn:hover{transform:translateY(-1px)}.al-btn:focus-visible{outline:2px solid var(--al-sky);outline-offset:3px}
+.al-btn--primary{background:var(--al-ember);color:var(--al-ink)}.al-btn--light{background:#fff;color:var(--al-ink)}
+.al-btn--ghost{background:var(--al-surface);color:var(--al-text);border:1px solid var(--al-border)}
+.al-pill{display:inline-block;padding:4px 12px;border-radius:var(--al-radius-pill);font:600 13px var(--al-font-sans)}
+.al-pill--ok{background:rgba(61,220,151,.16);color:var(--al-ok)}.al-pill--warn{background:rgba(255,107,44,.16);color:var(--al-glow)}.al-pill--info{background:rgba(124,155,255,.18);color:var(--al-sky)}
+.al-icon{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

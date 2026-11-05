@@ -1,0 +1,132 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font gestiti da next/font: mappati sulle variabili del brand kit. */
+:root {
+  --al-font-sans: var(--font-geist), system-ui, sans-serif;
+  --al-font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --al-font-serif: var(--font-instrument-serif), Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  /* Focus visibile su tutti gli elementi interattivi (regola AGENTS: outline 2px Sky). */
+  :focus-visible {
+    outline: 2px solid var(--al-sky);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: rgba(255, 107, 44, 0.32);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* Container 12 colonne, max 1200px */
+  .al-container {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1200px;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .al-container {
+      padding-inline: 32px;
+    }
+  }
+
+  /* Padding verticale sezioni: 96px da 768px+, 128px da 1024px+ */
+  .al-section-pad {
+    padding-block: 72px;
+  }
+
+  @media (min-width: 768px) {
+    .al-section-pad {
+      padding-block: 96px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .al-section-pad {
+      padding-block: 128px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Reveal minimo: fade/translate 180ms, senza motion se l'utente lo chiede. */
+  .al-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity var(--al-dur) var(--al-ease),
+      transform var(--al-dur) var(--al-ease);
+    transition-delay: var(--al-reveal-delay, 0ms);
+  }
+
+  .al-reveal[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .al-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Ingresso hero (solo load, 180ms) */
+  .al-enter {
+    animation: al-fade-up var(--al-dur) var(--al-ease) both;
+  }
+
+  .al-enter-d1 {
+    animation: al-fade-up var(--al-dur) var(--al-ease) both;
+    animation-delay: 60ms;
+  }
+
+  .al-enter-d2 {
+    animation: al-fade-up var(--al-dur) var(--al-ease) both;
+    animation-delay: 120ms;
+  }
+
+  @keyframes al-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .al-enter,
+    .al-enter-d1,
+    .al-enter-d2 {
+      animation: none;
+    }
+  }
+}

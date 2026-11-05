@@ -1,0 +1,75 @@
+/**
+ * Icone del brand kit AfterLoop — copia aderente di afterloop-brand-kit/icons/icons.tsx.
+ * 24px, stroke 1.75, currentColor. Mai emoji come icone.
+ */
+import type { SVGProps } from "react";
+
+export const icons = {
+  dashboard:
+    '<rect x="3" y="3" width="7" height="8" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="15" width="7" height="6" rx="2"/>',
+  factory: '<path d="M3 21V11l5 3v-3l5 3V4h5v17z"/><path d="M7 21v-3M11 21v-3"/>',
+  conveyor:
+    '<rect x="3" y="8" width="18" height="7" rx="3.5"/><path d="M7.5 11.5h.01M12 11.5h.01M16.5 11.5h.01M5 18v3M19 18v3"/>',
+  gear: '<circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+  component:
+    '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/>',
+  wear: '<path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4-5"/><circle cx="12" cy="17" r="1"/>',
+  bell: '<path d="M6 17v-6a6 6 0 0 1 12 0v6l1.5 2h-15z"/><path d="M10 21h4"/>',
+  tasks: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 8l8 5 8-5"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  wrench:
+    '<path d="M5 19l7.5-7.5"/><path d="M12.5 11.5A4.5 4.5 0 0 1 17 4l-2.5 2.5L16 8l1.5 1.5L20 7a4.5 4.5 0 0 1-7.5 4.5z"/>',
+  box: '<path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/>',
+  shield:
+    '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+  refresh:
+    '<path d="M20 11a8 8 0 0 0-14-4L4 9"/><path d="M4 4v5h5"/><path d="M4 13a8 8 0 0 0 14 4l2-2"/><path d="M20 20v-5h-5"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  users:
+    '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.7a3.5 3.5 0 0 1 0 6.6M18 14a6.5 6.5 0 0 1 3.5 6"/>',
+  trend: '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  euro: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7.5 11h6M7.5 13.5h6"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+  filter: '<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7"/>',
+  "arrow-right": '<path d="M4 12h16M14 6l6 6-6 6"/>',
+  document: '<path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
+  phone:
+    '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+  send: '<path d="M21 3L3 11l7 3 3 7z"/><path d="M10 14l11-11"/>',
+  warning: '<path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  download: '<path d="M12 4v11M7 11l5 5 5-5M4 20h16"/>',
+  downtime: '<circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  close: '<path d="M6 6l12 12M18 6L6 18"/>',
+  headset: '<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="2"/><rect x="17" y="14" width="4" height="6" rx="2"/>',
+  loop: '<path d="M9 6h7a6 6 0 0 1 0 12H8a6 6 0 0 1-4.5-10"/><circle cx="4.5" cy="7" r="1.6" fill="currentColor"/>',
+} as const;
+
+export type IconName = keyof typeof icons;
+
+export function Icon({
+  name,
+  size = 24,
+  ...p
+}: { name: IconName; size?: number } & SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...p}
+      dangerouslySetInnerHTML={{ __html: icons[name] }}
+    />
+  );
+}
