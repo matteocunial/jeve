@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://matteocunial.github.io/jeve/sitemap.xml
