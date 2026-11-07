@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, cn } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 
@@ -13,9 +13,22 @@ const LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-al-line bg-[var(--al-glass)] backdrop-blur-md">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b bg-[var(--al-glass)] backdrop-blur-md transition-[border-color,box-shadow] duration-150",
+        scrolled ? "border-al-line" : "border-transparent",
+      )}
+    >
       <Container>
         <nav aria-label="Principale" className="flex h-16 items-center justify-between gap-6">
           <a href="/" className="flex shrink-0 items-center" aria-label="AfterLoop — home">

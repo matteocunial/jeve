@@ -15,6 +15,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Scrollbar sottile coerente col tema */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
   }
 
   body {
@@ -28,8 +31,29 @@
     border-radius: 2px;
   }
 
+  /* Selezione del testo in Cobalt tenue */
   ::selection {
-    background: rgba(255, 107, 44, 0.32);
+    background: rgba(43, 89, 255, 0.38);
+    color: var(--al-text);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    border: 2px solid var(--al-bg);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -40,6 +64,14 @@
 }
 
 @layer components {
+  /* Sezione chiara (Mist), es. "Cosa cambia per te": i token cambiano con
+     data-theme, ma colore e sfondo vanno ri-dichiarati qui perché il colore
+     del body è già risolto a livello body (valore computato, non var()). */
+  [data-theme="light"] {
+    background: var(--al-bg);
+    color: var(--al-text);
+  }
+
   /* Container 12 colonne, max 1200px */
   .al-container {
     margin-inline: auto;
@@ -69,6 +101,42 @@
     .al-section-pad {
       padding-block: 128px;
     }
+  }
+
+  /* Card: al hover il bordo si accende leggermente (max 180ms). */
+  .al-card {
+    transition: border-color 150ms var(--al-ease);
+  }
+
+  .al-card:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  [data-theme="light"] .al-card:hover {
+    border-color: rgba(5, 8, 15, 0.3);
+  }
+
+  /* Icone nelle card: al hover prendono il colore pieno della tinta (--tile-c). */
+  .icon-tint {
+    transition: color 150ms var(--al-ease);
+  }
+
+  .group\/card:hover .icon-tint,
+  .group\/card:focus-within .icon-tint {
+    color: var(--tile-c);
+  }
+
+  /* Bottoni: freccia che scorre di 3px al hover, stato pressed fermo. */
+  .al-btn .btn-arrow {
+    transition: transform 150ms var(--al-ease);
+  }
+
+  .al-btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  .al-btn:active {
+    transform: translateY(0);
   }
 }
 
@@ -127,6 +195,65 @@
     .al-enter-d1,
     .al-enter-d2 {
       animation: none;
+    }
+  }
+
+  /* Tipografia curata */
+  .balance {
+    text-wrap: balance;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Hairline in gradiente Cobalt→Ember sul bordo superiore delle card (opacità bassa) */
+  .hairline-top {
+    position: relative;
+  }
+
+  .hairline-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(43, 89, 255, 0) 0%,
+        rgba(43, 89, 255, 0.38) 32%,
+        rgba(255, 107, 44, 0.34) 78%,
+        rgba(255, 107, 44, 0) 100%
+      );
+    pointer-events: none;
+  }
+
+  /* Sottolineatura dell'accent word nell'hero: gradiente sottile Cobalt→Ember */
+  .hero-underline {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .hero-underline::after {
+    content: "";
+    position: absolute;
+    left: 2%;
+    right: 4%;
+    bottom: -0.12em;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      rgba(43, 89, 255, 0.65),
+      rgba(255, 107, 44, 0.85)
+    );
+    opacity: 0.55;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-underline::after {
+      opacity: 1;
     }
   }
 }
