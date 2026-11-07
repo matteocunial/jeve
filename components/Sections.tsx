@@ -1,5 +1,6 @@
 import { Accent, Card, Container, Eyebrow, IconTile, Section, SectionHeader, StatusPill, TOKEN_COLOR, TOKEN_TINT, cn, type TokenColor } from "@/components/ui";
 
+import { asset } from "@/lib/base";
 import { Icon } from "@/components/Icon";
 import DemoFrame from "@/components/DemoFrame";
 import Reveal from "@/components/Reveal";
@@ -312,7 +313,7 @@ export function Showcase() {
               </div>
               <div className="lg:col-span-8">
                 <DemoFrame
-                  src="/demos/macchina.html"
+                  src={asset("/demos/macchina.html")}
                   title="AfterLoop — Dettaglio macchina e usura componenti (dati di esempio)"
                   callouts={["Usura per componente", "Alert al momento giusto"]}
                   caption="Per ogni componente la barra di usura stimata: il commerciale sa cosa proporre e quando."
@@ -326,7 +327,7 @@ export function Showcase() {
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="order-2 lg:order-1 lg:col-span-8">
                 <DemoFrame
-                  src="/demos/settimana.html"
+                  src={asset("/demos/settimana.html")}
                   title="AfterLoop — Priorità della settimana (dati di esempio)"
                   callouts={["Priorità per impatto", "Lista del lunedì"]}
                   caption="Ogni lunedì il team sa chi chiamare, cosa proporre e in che ordine, senza riscoprire ogni volta."
@@ -367,7 +368,7 @@ export function Showcase() {
               </div>
               <div className="lg:col-span-8">
                 <DemoFrame
-                  src="/demos/followup.html"
+                  src={asset("/demos/followup.html")}
                   title="AfterLoop — Task ed email pronta (dati di esempio)"
                   callouts={["Email già scritta", "In 3 righe la rivedi"]}
                   caption="Zero fogli bianchi: la bozza d'email è pronta e rispetta il tono della tua azienda."

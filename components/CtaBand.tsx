@@ -1,4 +1,5 @@
 import { Accent, Button, Container, Eyebrow, HeroAccent, Arrow } from "@/components/ui";
+import { asset } from "@/lib/base";
 
 /**
  * Banda CTA finale: secondo e ultimo uso dell'afterglow (striature flautate),
@@ -11,7 +12,7 @@ export default function CtaBand() {
       {/* Anelli del loop del brand, appena percettibli */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/patterns/loop-rings.svg"
+        src={asset("/patterns/loop-rings.svg")}
         alt=""
         aria-hidden="true"
         loading="lazy"

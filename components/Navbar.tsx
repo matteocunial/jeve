@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/base";
 import { useEffect, useState } from "react";
 import { Container, cn } from "@/components/ui";
 import { Icon } from "@/components/Icon";
@@ -34,7 +35,7 @@ export default function Navbar() {
           <a href="/" className="flex shrink-0 items-center" aria-label="AfterLoop — home">
             {/* Kit: lockup-on-dark su tema scuro */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo/lockup-on-dark.svg" alt="" width={133} height={26} className="h-[26px] w-auto" />
+            <img src={asset("/logo/lockup-on-dark.svg")} alt="" width={133} height={26} className="h-[26px] w-auto" />
           </a>
 
           <ul className="hidden items-center gap-7 md:flex">

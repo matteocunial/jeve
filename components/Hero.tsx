@@ -1,4 +1,5 @@
 import { Button, Container, Eyebrow, HeroAccent, Arrow } from "@/components/ui";
+import { asset } from "@/lib/base";
 import DemoFrame from "@/components/DemoFrame";
 
 export default function Hero() {
@@ -48,7 +49,7 @@ export default function Hero() {
         <div className="al-enter-d2 mx-auto mt-14 max-w-[980px] md:mt-20">
           <div className="md:px-8">
             <DemoFrame
-              src="/demos/dashboard.html"
+              src={asset("/demos/dashboard.html")}
               title="AfterLoop — Parco macchine (dati di esempio)"
               eager
               callouts={["Usura calcolata per componente", "Task ed email pronte"]}
