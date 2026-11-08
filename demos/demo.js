@@ -1,1 +1,0 @@
-(function(){var s=document.querySelector('.stage');function f(){var k=Math.min(innerWidth/1280,innerHeight/800);s.style.transform='scale('+k+')';s.style.left=(innerWidth-1280*k)/2+'px';s.style.top=(innerHeight-800*k)/2+'px'}addEventListener('resize',f);f()})();
