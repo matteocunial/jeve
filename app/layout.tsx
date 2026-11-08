@@ -47,9 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="it" className={`${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable}`}>
       <body className="bg-al-bg text-al-text antialiased">
-        {/* Preconnect: le demo incorporano i font Geist/Instrument dal CDN Google. */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <noscript>
           <style>{`.al-reveal{opacity:1!important;transform:none!important}`}</style>
         </noscript>

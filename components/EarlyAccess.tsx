@@ -86,13 +86,14 @@ export default function EarlyAccess() {
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
-            <Eyebrow node="ember">Early access</Eyebrow>
-            <h2 className="al-title balance mt-3 text-[32px] leading-[1.05] tracking-[-0.03em] md:text-[40px]">
-              Fai parte delle <Accent>prime</Accent> aziende.
+            <Eyebrow>Early access</Eyebrow>
+            <h2 className="al-title mt-3 text-[32px] leading-[1.05] tracking-[-0.03em] md:text-[40px]">
+              Porta AfterLoop nella tua <Accent>azienda</Accent>.
             </h2>
-            <p className="mt-4 max-w-[62ch] text-[16px] leading-[1.65] text-al-muted">
-              Costruiamo AfterLoop insieme a chi lo userà. Lascia i tuoi dati: ti ricontattiamo per
-              fissare una demo di 20 minuti, con il tuo parco macchine come materiale di lavoro.
+            <p className="mt-4 text-[16px] leading-[1.65] text-al-muted">
+              Stiamo selezionando le prime PMI manifatturiere con cui mettere a punto il prodotto.
+              Lascia i tuoi dati: ti ricontattiamo per fissare una demo di 20 minuti, con il tuo parco
+              macchine come materiale di lavoro.
             </p>
             <ul className="mt-6 space-y-3 text-[15px] text-al-muted">
               <li className="flex items-start gap-3">
@@ -236,12 +237,12 @@ export default function EarlyAccess() {
                   disabled={stato === "invio"}
                   className="al-btn al-btn--primary mt-6 w-full justify-center disabled:cursor-wait disabled:opacity-70"
                 >
-                  {stato === "invio" ? "Invio in corso..." : "Invia la richiesta"}
+                  {stato === "invio" ? "Invio in corso..." : "Richiedi l'early access"}
                   {stato === "invio" ? null : <Icon name="arrow-right" size={18} />}
                 </button>
                 <p className="mt-3 text-center text-[12px] text-al-muted">
-                  Ti rispondiamo entro due giorni lavorativi. Nessuna newsletter: solo la risposta
-                  alla tua richiesta.
+                  Ti rispondiamo entro due giorni lavorativi. Nessuna newsletter: solo la risposta alla
+                  tua richiesta.
                 </p>
               </form>
             )}

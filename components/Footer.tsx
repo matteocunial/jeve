@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui";
-import { asset } from "@/lib/base";
 
 const NAV = [
   { href: "#prodotto", label: "Prodotto" },
@@ -16,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={asset("/logo/lockup-mono-white.svg")}
+              src="/logo/lockup-mono-white.svg"
               alt="AfterLoop"
               width={133}
               height={26}

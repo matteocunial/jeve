@@ -1,7 +1,6 @@
 "use client";
 
-import { asset } from "@/lib/base";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Container, cn } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 
@@ -14,28 +13,15 @@ const LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 border-b bg-[var(--al-glass)] backdrop-blur-md transition-[border-color,box-shadow] duration-150",
-        scrolled ? "border-al-line" : "border-transparent",
-      )}
-    >
+    <header className="sticky top-0 z-50 border-b border-al-line bg-[var(--al-glass)] backdrop-blur-md">
       <Container>
         <nav aria-label="Principale" className="flex h-16 items-center justify-between gap-6">
           <a href="/" className="flex shrink-0 items-center" aria-label="AfterLoop — home">
             {/* Kit: lockup-on-dark su tema scuro */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={asset("/logo/lockup-on-dark.svg")} alt="" width={133} height={26} className="h-[26px] w-auto" />
+            <img src="/logo/lockup-on-dark.svg" alt="" width={133} height={26} className="h-[26px] w-auto" />
           </a>
 
           <ul className="hidden items-center gap-7 md:flex">

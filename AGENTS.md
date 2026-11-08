@@ -16,9 +16,8 @@ Target: titolari, direttori commerciali, responsabili service/after-sales di PMI
 - Tema scuro di default (Ink/Deep), tema chiaro con `data-theme="light"`.
 - Font: Geist (UI e titoli, peso 500, letter-spacing -0.04em sui titoli grandi), Instrument Serif Italic per UNA parola chiave per titolo (`.al-accent`), Geist Mono per etichette e dati.
 - Ember = azione primaria e stato "da agire". Testo su Ember sempre Ink, mai bianco. Una sola azione Ember per vista.
-- Afterglow (`.al-afterglow`) solo in due punti: hero e banda della CTA finale (con anelli loop-rings tenui). Mai dietro tabelle, form o testo lungo.
-- Card: `.al-card` (20px) nel prodotto, `.al-glass` (28px) nei contenuti. Bordo 1px + hairline gradiente Cobalt→Ember sul bordo superiore; al hover il bordo si accende e l'icona prende colore pieno. Nessun bordo laterale colorato, nessuna ombra pesante.
-- Colore per sezione (ritmo 60/30/10): basi scure strutturali + un colore dominante per sezione con accent word in Instrument Serif Italic del colore di sezione. Una sezione chiara (Mist, `data-theme="light"`). Tinte 8-16% per sfondi, 20-40% per bordi. Ember solo per l'azione primaria e lo stato "da agire", mai decorativo.
+- Afterglow (`.al-afterglow`) solo come fondo di hero o poster, mai dietro tabelle, form o testo lungo.
+- Card: `.al-card` (20px) nel prodotto, `.al-glass` (28px) nei contenuti. Nessun bordo laterale colorato, nessuna ombra pesante.
 - Stati: ok `--al-ok`, attenzione Ember/Glow, informativo Sky.
 - Icone: `icons/sprite.svg` (id `al-<nome>`) oppure `icons/icons.tsx`. 24px, stroke 1.75, `currentColor`. Mai emoji come icone.
 - Logo: `logo/`. Su scuro `lockup-on-dark.svg`, su chiaro `lockup-on-light.svg`. Area di rispetto = altezza del nodo arancione x2. Non deformare, non cambiare il colore del nodo (tranne versioni mono).

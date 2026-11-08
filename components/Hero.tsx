@@ -1,11 +1,12 @@
-import { Button, Container, Eyebrow, HeroAccent, Arrow } from "@/components/ui";
-import { asset } from "@/lib/base";
-import DemoFrame from "@/components/DemoFrame";
+import { Accent, Button, Container, Eyebrow } from "@/components/ui";
+import { MockMachines } from "@/components/mocks";
+import { Icon } from "@/components/Icon";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Afterglow: uso n.1 (hero). Livello mascherato verso l'alto, attenuato. */}
+      {/* Afterglow: unico uso nella pagina, alone discreto dietro l'hero.
+          Il livello è mascherato verso l'alto e attenuato; il contenuto sta sopra. */}
       <div
         aria-hidden="true"
         className="al-afterglow pointer-events-none inset-0"
@@ -19,13 +20,18 @@ export default function Hero() {
       <Container className="relative z-[1] pb-20 pt-16 md:pb-28 md:pt-24 lg:pt-28">
         <div className="mx-auto flex max-w-[840px] flex-col items-center text-center">
           <div className="al-enter">
-            <Eyebrow node="ember" className="inline-flex items-center gap-2 rounded-full border border-al-line px-3 py-1.5">
+            <Eyebrow className="inline-flex items-center gap-2 rounded-full border border-al-line px-3 py-1.5">
+              <span
+                aria-hidden="true"
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ background: "var(--al-ember)" }}
+              />
               In fase di lancio
             </Eyebrow>
           </div>
 
-          <h1 className="al-enter-d1 al-title balance mt-6 text-[40px] leading-[1.02] tracking-[-0.035em] sm:text-[52px] md:mt-8 md:text-[64px]">
-            Il post-vendita che <HeroAccent>anticipa</HeroAccent>, non rincorre.
+          <h1 className="al-enter-d1 al-title mt-6 text-[40px] leading-[1.02] tracking-[-0.035em] sm:text-[52px] md:mt-8 md:text-[64px]">
+            Il post-vendita che <Accent>anticipa</Accent>, non rincorre.
           </h1>
 
           <p className="al-enter-d2 mt-5 max-w-[640px] text-[16px] leading-[1.65] text-al-muted md:mt-6 md:text-[18px]">
@@ -37,7 +43,7 @@ export default function Hero() {
           <div className="al-enter-d2 mt-8 flex flex-col items-center gap-3 sm:flex-row md:mt-10">
             <Button href="#early-access" className="w-full justify-center sm:w-auto">
               Richiedi l&apos;early access
-              <Arrow />
+              <Icon name="arrow-right" size={18} />
             </Button>
             <Button href="#come-funziona" variant="ghost" className="w-full justify-center sm:w-auto">
               Come funziona
@@ -45,18 +51,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Demo n.1: dashboard (hero, senza lazy). */}
         <div className="al-enter-d2 mx-auto mt-14 max-w-[980px] md:mt-20">
-          <div className="md:px-8">
-            <DemoFrame
-              src={asset("/demos/dashboard.html")}
-              title="AfterLoop — Parco macchine (dati di esempio)"
-              eager
-              callouts={["Usura calcolata per componente", "Task ed email pronte"]}
-              caption="Lo stato di ogni macchina venduta e l'usura dei componenti critici, in un'unica vista."
-              className="-mx-5 md:mx-0"
-            />
-          </div>
+          <MockMachines />
         </div>
       </Container>
     </section>
